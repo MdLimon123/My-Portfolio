@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/Utils/app_color.dart';
@@ -5,6 +6,7 @@ import 'package:personal_portfolio/Utils/app_image.dart';
 import 'package:personal_portfolio/Utils/app_text.dart';
 import 'package:personal_portfolio/Utils/app_text_style.dart';
 import 'package:personal_portfolio/Utils/constants.dart';
+import 'package:personal_portfolio/Widgets/profile_animation.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,78 +19,107 @@ class HomeScreen extends StatelessWidget {
         appBar: _appBar(),
         body: SingleChildScrollView(
           padding: EdgeInsets.only(
-              left: size.width * 0.2,
-              right: size.width * 0.2,
-              top: size.height * 0.3),
+              left: size.width * 0.05,
+              right: size.width * 0.1,
+              top: size.height * 0.1),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Hello, It\'s Me",
-                        style: AppTextStyles.montserratStyle(
-                            color: AppColors.white),
-                      ),
-                      Constants.sizedBox(height: 15),
-                      Text(
-                        "Md Limon Islam",
-                        style: AppTextStyles.headingStyles(),
-                      ),
-                      Constants.sizedBox(height: 15),
-                      Row(
-                        children: [
-                          Text(
-                            "And I\'m a ",
-                            style: AppTextStyles.montserratStyle(
-                                color: AppColors.white),
-                          ),
-                          AnimatedTextKit(
-                            animatedTexts: [
-                              TypewriterAnimatedText('Flutter Developer',
-                                  textStyle: AppTextStyles.montserratStyle(
-                                      color: AppColors.robinEdgeBlue)),
-                            ],
-                            pause: const Duration(milliseconds: 1000),
-                            displayFullTextOnTap: true,
-                            stopPauseOnTap: true,
-                          )
-                        ],
-                      ),
-                      Constants.sizedBox(height: 15),
-                      SizedBox(
-                        width: size.width * 0.3,
+                      FadeInDown(
+                        duration: const Duration(milliseconds: 1200),
                         child: Text(
-                          'In publishing and graphic design, Lorem ipsum is a placeholder '
-                          'text commonly used to demonstrate the visual form of a document'
-                          ' or a typeface without relying on meaningful content. ',
-                          style: AppTextStyles.normalStyle(),
+                          "Hello, It\'s Me",
+                          style: AppTextStyles.montserratStyle(
+                              color: AppColors.white),
                         ),
                       ),
                       Constants.sizedBox(height: 15),
-                      Row(
-                        children: [
-                          buildSocialButton(image: AppsImage.facebook),
-                          Constants.sizedBox(width: 12),
-                          buildSocialButton(image: AppsImage.linkedin),
-                          Constants.sizedBox(width: 12),
-                          buildSocialButton(image: AppsImage.twitter),
-                          Constants.sizedBox(width: 12),
-                          buildSocialButton(image: AppsImage.insta),
-                          Constants.sizedBox(width: 12),
-                          buildSocialButton(image: AppsImage.github),
-                        ],
+                      FadeInRight(
+                        duration: const Duration(milliseconds: 1400),
+                        child: Text(
+                          "Md Limon Islam",
+                          style: AppTextStyles.headingStyles(),
+                        ),
                       ),
                       Constants.sizedBox(height: 15),
-                      _buildMaterialButton(
-                        onTap: () {},
-                      )
+                      FadeInLeft(
+                        duration: const Duration(milliseconds: 1400),
+                        child: Row(
+                          children: [
+                            Text(
+                              "And I\'m a ",
+                              style: AppTextStyles.montserratStyle(
+                                  color: AppColors.white),
+                            ),
+                            AnimatedTextKit(
+                              animatedTexts: [
+                                TypewriterAnimatedText('Flutter Developer',
+                                    textStyle: AppTextStyles.montserratStyle(
+                                        color: AppColors.robinEdgeBlue)),
+                              ],
+                              pause: const Duration(milliseconds: 1000),
+                              displayFullTextOnTap: true,
+                              stopPauseOnTap: true,
+                            )
+                          ],
+                        ),
+                      ),
+                      Constants.sizedBox(height: 15),
+                      FadeInDown(
+                        duration: const Duration(milliseconds: 1600),
+                        child: SizedBox(
+                          width: size.width * 0.3,
+                          child: Text(
+                            'In publishing and graphic design, Lorem ipsum is a placeholder '
+                            'text commonly used to demonstrate the visual form of a document'
+                            ' or a typeface without relying on meaningful content. ',
+                            style: AppTextStyles.normalStyle(),
+                          ),
+                        ),
+                      ),
+                      Constants.sizedBox(height: 15),
+                      FadeInDown(
+                        duration: const Duration(milliseconds: 1600),
+                        child: Row(
+                          children: [
+                            buildSocialButton(image: AppsImage.facebook),
+                            Constants.sizedBox(width: 12),
+                            buildSocialButton(image: AppsImage.linkedin),
+                            Constants.sizedBox(width: 12),
+                            buildSocialButton(image: AppsImage.twitter),
+                            Constants.sizedBox(width: 12),
+                            buildSocialButton(image: AppsImage.insta),
+                            Constants.sizedBox(width: 12),
+                            buildSocialButton(image: AppsImage.github),
+                          ],
+                        ),
+                      ),
+                      Constants.sizedBox(height: 15),
+                      FadeInUp(
+                          duration: const Duration(milliseconds: 1800),
+                          child: _buildMaterialButton(
+                            onTap: () {},
+                          ))
                     ],
-                  )
+                  ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  //<---- profile animation controller ----->
+                  const ProfileAnimation()
                 ],
-              )
+              ),
+              const SizedBox(
+                height: 400,
+              ),
             ],
           ),
         ));

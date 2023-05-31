@@ -6,5 +6,5 @@ class Routes {
 }
 
 List<GetPage> getPages = [
-  GetPage(name: Routes.homeScreen, page: () => HomeScreen()),
+  GetPage(name: Routes.homeScreen, page: () => const HomeScreen()),
 ];

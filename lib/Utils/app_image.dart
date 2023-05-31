@@ -11,4 +11,5 @@ class AppsImage {
   static String work1 = "assets/images/work1.png";
   static String work2 = "assets/images/work2.jpg";
   static String share = "assets/images/share.png";
+  static String profile1 = "assets/images/limon.jpg";
 }
