@@ -1,6 +1,10 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:personal_portfolio/Screens/HomeScreen/about_me_screen.dart';
+import 'package:personal_portfolio/Screens/HomeScreen/my_portfolio.dart';
+import 'package:personal_portfolio/Screens/HomeScreen/my_service_screen.dart';
+import 'package:personal_portfolio/Utils/app_button.dart';
 import 'package:personal_portfolio/Utils/app_color.dart';
 import 'package:personal_portfolio/Utils/app_image.dart';
 import 'package:personal_portfolio/Utils/app_text.dart';
@@ -105,9 +109,8 @@ class HomeScreen extends StatelessWidget {
                       Constants.sizedBox(height: 15),
                       FadeInUp(
                           duration: const Duration(milliseconds: 1800),
-                          child: _buildMaterialButton(
-                            onTap: () {},
-                          ))
+                          child: AppButtons.buildMaterialButton(
+                              buttonName: 'Download CV', onTap: () {}))
                     ],
                   ),
                   const SizedBox(
@@ -118,8 +121,16 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(
-                height: 400,
+                height: 220,
               ),
+
+              //<------ about me -------
+              const AboutMeScreen(),
+
+              //<------ my services -------
+              MyServiceScreen(),
+              //<------ my protfolio -------
+              MyPortfolio(),
             ],
           ),
         ));
