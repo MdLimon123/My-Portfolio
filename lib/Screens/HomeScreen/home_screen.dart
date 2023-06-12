@@ -2,6 +2,8 @@ import 'package:animate_do/animate_do.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_portfolio/Screens/HomeScreen/about_me_screen.dart';
+import 'package:personal_portfolio/Screens/HomeScreen/contact_us.dart';
+import 'package:personal_portfolio/Screens/HomeScreen/footer_class.dart';
 import 'package:personal_portfolio/Screens/HomeScreen/my_portfolio.dart';
 import 'package:personal_portfolio/Screens/HomeScreen/my_service_screen.dart';
 import 'package:personal_portfolio/Utils/app_button.dart';
@@ -131,6 +133,10 @@ class HomeScreen extends StatelessWidget {
               MyServiceScreen(),
               //<------ my protfolio -------
               MyPortfolio(),
+              //<------ contact us -------
+              ContactUsScreen(),
+              FooterClass(),
+              Constants.sizedBox(height: 50)
             ],
           ),
         ));
