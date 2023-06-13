@@ -18,6 +18,7 @@ class AboutMeScreen extends StatelessWidget {
       width: size.width,
       alignment: Alignment.center,
       color: AppColors.bgColor2,
+      padding: EdgeInsets.symmetric(vertical: 30, horizontal: size.width * 0.1),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -59,7 +60,7 @@ class AboutMeScreen extends StatelessWidget {
                 ),
                 Constants.sizedBox(height: 8),
                 FadeInLeft(
-                  duration: const Duration(milliseconds:1600 ),
+                  duration: const Duration(milliseconds: 1600),
                   child: Text(
                     'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.'
                     ' The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,'
